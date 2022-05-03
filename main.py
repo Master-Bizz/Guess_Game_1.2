@@ -13,11 +13,13 @@ guess = None
 
 while guess != correct_guess:
    guess = input(f'{context}\n\v Guess the Word ! :  ')
+   if guess == correct_guess:
+     break
    try:
-        sGuess = str(guess)
+     sGuess = str(guess)
    except:
-         print ('Huhh! Did I not just say guess the WORD..')
-         continue
+    print ('Huhh! Did I not just say guess the WORD..')
+    continue
    if sGuess != correct_guess and guess_count < guess_count_limit:
      print (f'\v Strike {guess_count} | Try again!', Hint)      
      guess_count = guess_count + 1
@@ -26,6 +28,5 @@ while guess != correct_guess:
      print ('\v B0ooM!!!, Limited Patience Reached..')
      print ('Pitiful..')
      quit()
-   elif sGuess == correct_guess:
-     break
+
 print(f'\n Correct :)\n lucky guess!.. I guess?: {correct_guess}..indeed.')
